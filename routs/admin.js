@@ -3,16 +3,16 @@ const router = express.Router()
 
 router.get("/", require("../controllers/admin/adminController"))
 
-router.get("/create", (req, res) => {
-	res.render("admin/adminCreateForm")
+router.get("/create/user", (req, res) => {
+    res.render("admin/adminCreateForm")
 })
 
 router.get("/create/city", (req, res) => {
-	res.render("admin/createCity")
+    res.render("admin/createCity")
 })
 
 router.get("/create/product", (req, res) => {
-	res.render("admin/createProduct")
+    res.render("admin/createProduct")
 })
 
 
