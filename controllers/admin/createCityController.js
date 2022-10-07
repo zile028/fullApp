@@ -1,5 +1,6 @@
 const mongojs = require("mongojs")
-const db = mongojs("fullapp", ["users", "city"])
+const dbConfig = require("../../config/dbConfig")
+const db = mongojs(dbConfig.CONNECTION_STRING, ["users", "city"])
 
 const createCityController = (req, res) => {
 	let {cityName, zip} = req.body

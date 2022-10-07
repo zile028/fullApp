@@ -1,6 +1,6 @@
 const mongojs = require("mongojs")
-const db = mongojs("fullapp", ["users"])
-
+const dbConfig = require("../../config/dbConfig")
+const db = mongojs(dbConfig.CONNECTION_STRING, ["users"])
 const saveController = (req, res) => {
 	let {firstName, lastName, password, role, email} = req.body
 	db.users.insertOne({firstName, lastName, password, role, email}, (err, docs) => {
