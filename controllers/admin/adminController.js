@@ -1,6 +1,6 @@
 const mongojs = require("mongojs")
-const db = mongojs("fullapp", ["users", "city", "products"])
-
+const dbConfig = require("../../config/dbConfig")
+const db = mongojs(dbConfig.CONNECTION_STRING, ["users", "city", "products"])
 const adminController = (req, res) => {
     let {user} = req.session
     if (!req.session.user) {
