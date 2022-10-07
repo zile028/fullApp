@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0c5fa000-b156-46ab-979f-df9f314f81d3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/controllers/admin/deleteCityController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/admin/deleteProductController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/admin/adminController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/admin/adminController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/admin/deleteUserController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/admin/deleteUserController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/admin/createCityController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/admin/createCityController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routs/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/routs/admin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/adminDashboard.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/adminDashboard.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +69,7 @@
       <workItem from="1664980612165" duration="6745000" />
       <workItem from="1665082574425" duration="1202000" />
       <workItem from="1665088134187" duration="6014000" />
-      <workItem from="1665155810936" duration="1949000" />
+      <workItem from="1665155810936" duration="10479000" />
     </task>
     <servers />
   </component>

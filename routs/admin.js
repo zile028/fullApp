@@ -1,6 +1,9 @@
 const express = require("express")
 const router = express.Router()
 
+
+router.use(checkAdmin)
+
 router.get("/", require("../controllers/admin/adminController"))
 
 //CREATE
@@ -21,6 +24,19 @@ router.post("/create/product/save", require("../controllers/admin/createProductC
 router.get("/delete/user/:userId", require("../controllers/admin/deleteUserController"))
 router.get("/delete/city/:cityId", require("../controllers/admin/deleteCityController"))
 router.get("/delete/product/:productId", require("../controllers/admin/deleteProductController"))
+
+function checkAdmin(req, res, next) {
+    let user = req.session.user
+    if (user) {
+        if (user.role === "admin") {
+            next()
+        } else {
+            res.redirect("/")
+        }
+    } else {
+        res.redirect("/")
+    }
+}
 
 
 module.exports = router
