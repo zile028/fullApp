@@ -1,33 +1,28 @@
 const mongojs = require("mongojs")
-const dbConfig = require("../../config/dbConfig")
-const db = mongojs(dbConfig.CONNECTION_STRING, ["users", "city", "products"])
+const db = mongojs("fullapp", ["users", "city", "products"])
 
 const adminController = (req, res) => {
-	let user = req.session.user
-	if (!user) {
-		res.redirect("/")
-		return
-	}
+    let {user} = req.session
+    if (!req.session.user) {
+        res.redirect("/")
+        return
+    }
+    db.users.find({}, (err, users) => {
+        let operateri = users.filter((el) => el.role === "operater")
+        let savetnici = users.filter((el) => el.role === "savetnik")
+        db.city.find({}, (err, gradovi) => {
+            db.products.find({}, (err, proizvodi) => {
+                res.render("admin/adminDashboard", {
+                    activeUser: user,
+                    operateri: operateri,
+                    savetnici: savetnici,
+                    gradovi: gradovi,
+                    proizvodi: proizvodi
+                })
+            })
+        })
+    })
 
-	db.users.find({}, (err, users) => {
-		db.city.find({}, (err, cities) => {
-			db.products.find({}, (err, products) => {
-
-				let operateri = users.filter((el) => el.role === "operater")
-				let savetnici = users.filter((el) => el.role === "savetnik")
-				res.render("admin/adminDashboard",
-				  {
-					  name: user.firstName,
-					  gradovi: cities,
-					  proizvodi: products,
-					  operateri: operateri,
-					  savetnici: savetnici
-				  }
-				)
-			})
-		})
-	})
 }
-
 
 module.exports = adminController

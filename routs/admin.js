@@ -3,22 +3,21 @@ const router = express.Router()
 
 router.get("/", require("../controllers/admin/adminController"))
 
-//CREATE
 router.get("/create/user", (req, res) => {
-	res.render("admin/adminCreateForm")
+    res.render("admin/adminCreateForm")
 })
+
 router.get("/create/city", (req, res) => {
-	res.render("admin/createCity")
+    res.render("admin/createCity")
 })
+
 router.get("/create/product", (req, res) => {
-	res.render("admin/createProduct")
+    res.render("admin/createProduct")
 })
+
+
 router.post("/create/save", require("../controllers/admin/saveController"))
 router.post("/create/city/save", require("../controllers/admin/createCityController"))
 router.post("/create/product/save", require("../controllers/admin/createProductController"))
-
-//DELETE
-router.get("/delete/user/:userId", require("../controllers/admin/deleteUserController"))
-
 
 module.exports = router

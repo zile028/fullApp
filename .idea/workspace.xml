@@ -1,19 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1531720a-b556-4e51-89ad-eb3887fd74d5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/config/dbConfig.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/admin/deleteUserController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+    <list default="true" id="0c5fa000-b156-46ab-979f-df9f314f81d3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/admin/adminController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/admin/adminController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/admin/createCityController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/admin/createCityController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/admin/createProductController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/admin/createProductController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/admin/saveController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/admin/saveController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/loginController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/loginController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routs/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/routs/admin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/admin/adminDashboard.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/adminDashboard.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/admin/partials/adminBottom.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/partials/adminBottom.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/admin/partials/adminTop.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/partials/adminTop.ejs" afterDir="false" />
@@ -26,13 +17,6 @@
   <component name="ComposerSettings">
     <execution />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="JavaScript File" />
-      </list>
-    </option>
-  </component>
   <component name="FormatOnSaveOptions">
     <option name="myRunOnSave" value="true" />
   </component>
@@ -42,43 +26,51 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2FfEgvRHJJ6Xfjau67DrfX4BwSy" />
+  <component name="ProjectId" id="2EGqpgz8td7gVTKVwpFoe1Gi48x" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "H:/Web Dev/fullApp/public",
+    "last_opened_file_path": "C:/Users/ZILE0/Desktop/fullApp/public",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "editing.templates",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mongo"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="H:\Web Dev\fullApp\public" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="H:\Web Dev\fullApp\views\admin" />
+      <recent name="C:\Users\ZILE0\Desktop\fullApp\public" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="1531720a-b556-4e51-89ad-eb3887fd74d5" name="Changes" comment="" />
-      <created>1664874854154</created>
+      <changelist id="0c5fa000-b156-46ab-979f-df9f314f81d3" name="Changes" comment="" />
+      <created>1662232453062</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1664874854154</updated>
-      <workItem from="1664874859071" duration="5912000" />
-      <workItem from="1664960144591" duration="8588000" />
-      <workItem from="1665050131798" duration="9717000" />
+      <updated>1662232453062</updated>
+      <workItem from="1662232454525" duration="6815000" />
+      <workItem from="1664828751448" duration="275000" />
+      <workItem from="1664829328157" duration="3910000" />
+      <workItem from="1664913185268" duration="10214000" />
+      <workItem from="1664980612165" duration="6745000" />
+      <workItem from="1665082574425" duration="1202000" />
+      <workItem from="1665088134187" duration="5647000" />
     </task>
     <servers />
   </component>
@@ -90,7 +82,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
