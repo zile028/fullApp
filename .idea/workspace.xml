@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0c5fa000-b156-46ab-979f-df9f314f81d3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/routs/operater.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/operater/index.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/admin/adminController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/admin/adminController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/admin/createCityController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/admin/createCityController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routs/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/routs/admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/loginController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/loginController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routs/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routs/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/adminDashboard.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/adminDashboard.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +16,13 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="FormatOnSaveOptions">
     <option name="myRunOnSave" value="true" />
@@ -30,25 +39,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ZILE0/Desktop/fullApp/public&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editing.templates&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/ZILE0/Desktop/fullApp/public",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.rainbow.brackets",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mongo&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mongo"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ZILE0\Desktop\fullApp\public" />
@@ -69,7 +78,8 @@
       <workItem from="1664980612165" duration="6745000" />
       <workItem from="1665082574425" duration="1202000" />
       <workItem from="1665088134187" duration="6014000" />
-      <workItem from="1665155810936" duration="10479000" />
+      <workItem from="1665155810936" duration="10961000" />
+      <workItem from="1665213846594" duration="7332000" />
     </task>
     <servers />
   </component>
