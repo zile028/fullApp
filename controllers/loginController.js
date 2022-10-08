@@ -1,6 +1,6 @@
 const mongojs = require("mongojs")
-const dbConfig = require("../config/dbConfig")
-const db = mongojs(dbConfig.CONNECTION_STRING, ["users"])
+const {CONNECTION_STRING} = require("../config/dbConfig")
+const db = mongojs(CONNECTION_STRING, ["users"])
 
 const loginController = (req, res) => {
     let {firstName, password} = req.body
@@ -16,7 +16,7 @@ const loginController = (req, res) => {
                         res.redirect("/admin")
                         break;
                     case "operater":
-                        res.redirect("/operater")
+                        res.redirect("/operator")
                         break;
                     default:
                         res.redirect("/")

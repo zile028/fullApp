@@ -235,14 +235,17 @@
             <!-- Sidebar navigation-->
             <nav class="sidebar-nav">
                 <ul id="sidebarnav" class="pt-4">
+
                     <li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                                href="/operater" aria-expanded="false"><i
+                                                href="/operator" aria-expanded="false"><i
                                     class="mdi mdi-view-dashboard"></i><span
                                     class="hide-menu">Dashboard</span></a></li>
                     <li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                                href="/operater/termini" aria-expanded="false"><i
+                                                href="/operator/terms" aria-expanded="false"><i
                                     class="mdi mdi-chart-bar"></i><span
-                                    class="hide-menu">Termini</span></a></li>
+                                    class="hide-menu">Termini</span> <span
+                                    class="badge badge-orange badge-pill ml-auto"><%= brojTermina %></span></a>
+                    </li>
 
                 </ul>
             </nav>
@@ -257,12 +260,16 @@
     <!-- Page wrapper  -->
     <!-- ============================================================== -->
     <div class="page-wrapper">
-        <form action="/operater/newTermin" method="post">
+        <form action="/operator/newTerms" method="post">
             <!-- ============================================================== -->
             <!-- Bread crumb and right sidebar toggle -->
             <!-- ============================================================== -->
             <div class="page-breadcrumb mb-3">
+
                 <div class="row">
+                    <div class="col-12">
+                        <h3 class="text-uppercase"><%= user.role + " - " + user.firstName %></h3>
+                    </div>
                     <div class="col-12 d-flex no-block align-items-center justify-content-between">
                         <h4 class="page-title">Novi termin</h4>
                         <div class="ms-auto text-end">
@@ -390,111 +397,113 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- End Klijent Info -->
+                    <!-- ============================================================== -->
 
+                    <!-- ============================================================== -->
+                    <!-- Start Termin Info -->
+                    <!-- ============================================================== -->
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title mb-0">Termin info</h5>
+                                <div class="form-group mt-3">
+                                    <label>Datum <small class="text-muted">dd/mm/yyyy</small></label>
+                                    <input type="date" class="form-control" name="termsDatum"
+                                           placeholder="Datum termina">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Vreme <small class="text-muted">hh:mm am/pm</small></label>
+                                    <input type="time" class="form-control" name="termsVreme"
+                                           placeholder="Vreme termina">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Savetnik</label>
+                                    <select class="form-control" name="termsConsultant">
+                                        <% savetnici.forEach(el=>{ %>
+                                            <option value="<%= el._id %>"><%= el.firstName + " " + el.lastName %></option>
+                                        <% }) %>
+
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Mesto rada</label>
+                                    <select class="form-control" name="termsWorkCity">
+                                        <% gradovi.forEach(el=>{ %>
+                                            <option value="<%= el._id %>"><%= el.zip + " - " + el.cityName %></option>
+                                        <% }) %>
+
+                                    </select>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Dodatno</h5>
+                                <div class="form-group mt-3">
+                                    <label>Deca</label>
+                                    <input type="text" class="form-control" name="clientChildren"
+                                           placeholder="Deca klijenta">
+                                </div>
+
+                                <div class="form-group mt-3">
+                                    <label>Operacije</label>
+                                    <input type="text" class="form-control" name="clientOperation"
+                                           placeholder="Operacije klijenta">
+                                </div>
+
+                                <div class="form-group mt-3">
+                                    <label>Terapija</label>
+                                    <input type="text" class="form-control" name="clientTherapy"
+                                           placeholder="Terapija klijenta">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- End Termin Info -->
+                    <!-- ============================================================== -->
+                </div>
+                <!-- editor -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Napomena</h4>
+                                <!-- Create the editor container -->
+                                <textarea class="form-control" name="termsNote" cols="30" rows="10"
+                                          placeholder="Napomena"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End PAge Content -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Right sidebar -->
+                <!-- ============================================================== -->
+                <!-- .right-sidebar -->
+                <!-- ============================================================== -->
+                <!-- End Right sidebar -->
+                <!-- ============================================================== -->
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
         </form>
     </div>
-</div>
-<!-- ============================================================== -->
-<!-- End Klijent Info -->
-<!-- ============================================================== -->
-
-<!-- ============================================================== -->
-<!-- Start Termin Info -->
-<!-- ============================================================== -->
-<div class="col-md-6">
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title mb-0">Termin info</h5>
-            <div class="form-group mt-3">
-                <label>Datum <small class="text-muted">dd/mm/yyyy</small></label>
-                <input type="date" class="form-control" name="terminDatum"
-                       placeholder="Datum termina">
-            </div>
-
-            <div class="form-group">
-                <label>Vreme <small class="text-muted">hh:mm am/pm</small></label>
-                <input type="time" class="form-control" name="terminVreme"
-                       placeholder="Vreme termina">
-            </div>
-
-            <div class="form-group">
-                <label>Savetnik</label>
-                <select class="form-control" name="terminSavetnik">
-                    <option value="Igor">Igor</option>
-                    <option value="Pera">Pera</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label>Mesto rada</label>
-                <select class="form-control" name="terminMestoRada">
-                    <option value="Beograd">Beograd</option>
-                    <option value="Nis">Nis</option>
-                </select>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title">Dodatno</h5>
-            <div class="form-group mt-3">
-                <label>Deca</label>
-                <input type="text" class="form-control" name="clientChildren"
-                       placeholder="Deca klijenta">
-            </div>
-
-            <div class="form-group mt-3">
-                <label>Operacije</label>
-                <input type="text" class="form-control" name="clientOperation"
-                       placeholder="Operacije klijenta">
-            </div>
-
-            <div class="form-group mt-3">
-                <label>Terapija</label>
-                <input type="text" class="form-control" name="clientTerapy"
-                       placeholder="Terapija klijenta">
-            </div>
-        </div>
-    </div>
-</div>
-<!-- ============================================================== -->
-<!-- End Termin Info -->
-<!-- ============================================================== -->
-</div>
-<!-- editor -->
-<div class="row">
-    <div class="col-12">
-        <div class="card">
-            <div class="card-body">
-                <h4 class="card-title">Napomena</h4>
-                <!-- Create the editor container -->
-                <textarea class="form-control" name="note" cols="30" rows="10"
-                          placeholder="Napomena"></textarea>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- ============================================================== -->
-<!-- End PAge Content -->
-<!-- ============================================================== -->
-<!-- ============================================================== -->
-<!-- Right sidebar -->
-<!-- ============================================================== -->
-<!-- .right-sidebar -->
-<!-- ============================================================== -->
-<!-- End Right sidebar -->
-<!-- ============================================================== -->
-</div>
-<!-- ============================================================== -->
-<!-- End Container fluid  -->
-<!-- ============================================================== -->
-</form>
-</div>
-<!-- ============================================================== -->
-<!-- End Page wrapper  -->
-<!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- End Page wrapper  -->
+    <!-- ============================================================== -->
 </div>
 <!-- ============================================================== -->
 <!-- End Wrapper -->

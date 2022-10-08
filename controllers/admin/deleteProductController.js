@@ -1,6 +1,6 @@
 const mongojs = require("mongojs")
-const dbConfig = require("../../config/dbConfig")
-const db = mongojs(dbConfig.CONNECTION_STRING, ["products"])
+const {CONNECTION_STRING} = require("../../config/dbConfig")
+const db = mongojs(CONNECTION_STRING, ["products"])
 
 const deleteProductController = (req, res) => {
     let id = req.params.productId

@@ -1,6 +1,6 @@
 const mongojs = require("mongojs")
-const dbConfig = require("../../config/dbConfig")
-const db = mongojs(dbConfig.CONNECTION_STRING, ["users"])
+const {CONNECTION_STRING} = require("../../config/dbConfig")
+const db = mongojs(CONNECTION_STRING, ["users"])
 
 const deleteCityController = (req, res) => {
     let userId = req.params.userId
