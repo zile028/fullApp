@@ -1,76 +1,99 @@
 <%- include("partials/adminTop.ejs") %>
-    <%- include("partials/adminSideBar.ejs")%>
+<%- include("partials/adminSideBar.ejs") %>
 
-        <div class="page-wrapper">
-            <!-- ============================================================== -->
-            <!-- Bread crumb and right sidebar toggle -->
-            <!-- ============================================================== -->
-            <div class="page-breadcrumb">
-                <div class="row">
-                    <div class="col-12 no-block">
-                        <!-- <h4 class="page-title">Termini</h4> -->
-                        <h3>
-                            <%= user.firstName + " " + user.lastName %> <br>
-                                <span class="text-muted">
+<div class="page-wrapper">
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-12 no-block">
+                <!-- <h4 class="page-title">Termini</h4> -->
+                <h3>
+                    <%= user.firstName + " " + user.lastName %> <br>
+                    <span class="text-muted">
                                     <%= user.role %>
                                 </span>
-                        </h3>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="container-fluid">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Termini</h5>
-                            <div class="table-responsive">
-                                <table id="zero_config" class="table table-striped table-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
-                                        </tr>
-                                    </thead>
-
-                                    <tbody>
-                                        <% terms.forEach((term)=> { %>
-                                            <tr>
-                                                <td>
-                                                    <%= term.clientFirstName + " " + term.clientLastName %>
-                                                </td>
-                                                <td>System Architect</td>
-                                                <td>Edinburgh</td>
-                                                <td>61</td>
-                                                <td>2011/04/25</td>
-                                                <td>$320,800</td>
-                                            </tr>
-                                            <% }) %>
-                                    </tbody>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
-                                        </tr>
-                                    </tfoot>
-                                </table>
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
+                </h3>
 
             </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Termini</h5>
+                    <div class="table-responsive">
+                        <table id="zero_config" class="table table-striped table-bordered">
+                            <thead>
+                            <tr>
+                                <th>Stranka</th>
+                                <th>Datum/Vreme</th>
+                                <th>Status</th>
+                                <th>Ulaz</th>
+                                <th>Prodaja</th>
+                                <th>Vrednost ugovora</th>
+                                <th>Akontacija</th>
+                                <th>Vise</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <% terms.forEach((term)=> { %>
+                                <tr>
+                                    <td><%= term.clientFirstName + " " + term.clientLastName %></td>
+                                    <td><%= term.termsDatum + " - " + term.termsVreme %></td>
+                                    <td>
+                                        <% if(term.active){ %>
+                                            <button class="btn btn-sm btn-warning form-control">Aktivan</button>
+                                        <% }else{ %>
+                                            <button class="btn btn-sm btn-danger form-control">Ne aktivan</button>
+                                        <% } %>
+                                    </td>
+
+                                    <td>
+                                        <% if(term.entry){ %>
+                                            <button class="btn btn-sm btn-warning form-control">DA</button>
+                                        <% }else{ %>
+                                            <button class="btn btn-sm btn-danger form-control">NE</button>
+                                        <% } %>
+                                    </td>
+                                    <td>
+                                        <% if(term.costContract > 0){ %>
+                                            <button class="btn btn-sm btn-warning form-control">DA</button>
+                                        <% }else{ %>
+                                            <button class="btn btn-sm btn-danger form-control">NE</button>
+                                        <% } %>
+                                    </td>
+                                    <td><%= term.costContract %></td>
+                                    <td><%= term.costContract %></td>
+                                    <td><a href="/admin/terms/single/<%= term._id %>"
+                                           class="btn btn-sm btn-info">Vise</a></td>
+
+                                </tr>
+                            <% }) %>
+                            </tbody>
+                            <tfoot>
+                            <tr>
+                                <th>Name</th>
+                                <th>Position</th>
+                                <th>Office</th>
+                                <th>Age</th>
+                                <th>Start date</th>
+                                <th>Salary</th>
+                            </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
 
 
-            <%- include("partials/adminBottom.ejs") %>
+<%- include("partials/adminBottom.ejs") %>

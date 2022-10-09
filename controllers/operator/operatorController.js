@@ -7,8 +7,6 @@ const operatorController = (req, res) => {
     db.users.find({role: "savetnik"}, (err, savetnici) => {
         db.city.find({}, (err, gradovi) => {
             db.terms.find({operator: user._id}, (err, terms) => {
-                console.log(terms)
-
                 res.render("operator/index", {
                     user: user,
                     savetnici: savetnici,
