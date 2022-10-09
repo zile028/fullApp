@@ -1,0 +1,76 @@
+<%- include("partials/adminTop.ejs") %>
+    <%- include("partials/adminSideBar.ejs")%>
+
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="page-breadcrumb">
+                <div class="row">
+                    <div class="col-12 no-block">
+                        <!-- <h4 class="page-title">Termini</h4> -->
+                        <h3>
+                            <%= user.firstName + " " + user.lastName %> <br>
+                                <span class="text-muted">
+                                    <%= user.role %>
+                                </span>
+                        </h3>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Termini</h5>
+                            <div class="table-responsive">
+                                <table id="zero_config" class="table table-striped table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Position</th>
+                                            <th>Office</th>
+                                            <th>Age</th>
+                                            <th>Start date</th>
+                                            <th>Salary</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <% terms.forEach((term)=> { %>
+                                            <tr>
+                                                <td>
+                                                    <%= term.clientFirstName + " " + term.clientLastName %>
+                                                </td>
+                                                <td>System Architect</td>
+                                                <td>Edinburgh</td>
+                                                <td>61</td>
+                                                <td>2011/04/25</td>
+                                                <td>$320,800</td>
+                                            </tr>
+                                            <% }) %>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Position</th>
+                                            <th>Office</th>
+                                            <th>Age</th>
+                                            <th>Start date</th>
+                                            <th>Salary</th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+            <%- include("partials/adminBottom.ejs") %>
