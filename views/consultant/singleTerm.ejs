@@ -1,0 +1,79 @@
+<%- include("partials/top",{name:name}) %>
+<%- include("partials/sidebar") %>
+
+<div class="page-wrapper bg-light">
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+                <h4 class="page-title">Savetnik</h4>
+
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Container fluid  -->
+    <!-- ============================================================== -->
+    <div class="container-fluid bg-light">
+        <!-- ============================================================== -->
+        <!-- Sales Cards  -->
+        <!-- ============================================================== -->
+        <div class="row ">
+
+            <!-- Column -->
+            <div class="col-md-6 col-lg-2 col-xlg-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= term.termsVreme %>h
+                            <span class="float-right"><%= term.termsDatum %></span></h5>
+                    </div>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            Stranka:
+                            <button class="btn btn-sm btn-info form-control"><%= term.clientFirstName + " " + term.clientLastName %></button>
+                        </li>
+                        <li class="list-group-item">
+                            Godiste:
+                            <button class="btn btn-sm btn-info form-control"><%= term.clientYear %></button>
+                        </li>
+                        <li class="list-group-item">
+                            Fiksni telefon:
+                            <button class="btn btn-sm btn-info form-control"><%= term.clientPhone %></button>
+                        </li>
+                        <li class="list-group-item">
+                            Mobilni telefon:
+                            <button class="btn btn-sm btn-info form-control"><%= term.clientMobil %></button>
+                        </li>
+                        <li class="list-group-item">
+                            Adresa:
+                            <button class="btn btn-sm btn-info form-control"><%= term.clientAddress %></button>
+                        </li>
+                    </ul>
+                    <div class="card-footer">
+                        <form action="consultant/report/<%= term._id %>" method="post">
+                            <button class="btn btn-danger form-control" type="submit">Zatvori termin</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- Column -->
+
+        </div>
+
+
+        <!-- ============================================================== -->
+        <!-- Recent comment and chats -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Container fluid  -->
+    <!-- ============================================================== -->
+
+</div>
+
+<%- include("partials/bottom") %>

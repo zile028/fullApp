@@ -1,0 +1,64 @@
+<%- include("partials/top",{name:name}) %>
+<%- include("partials/sidebar") %>
+
+<div class="page-wrapper bg-light">
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+                <h4 class="page-title">Savetnik</h4>
+
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Container fluid  -->
+    <!-- ============================================================== -->
+    <div class="container-fluid bg-light">
+        <!-- ============================================================== -->
+        <!-- Sales Cards  -->
+        <!-- ============================================================== -->
+        <div class="row ">
+            <% if(terms.length === 0){ %>
+                <div class="col-md-6 col-lg-2 col-xlg-3">
+                    <div class="card card-hover">
+                        <div class="box bg-cyan text-center">
+                            <h2 class="font-light text-white">Nema aktivnih termina.</h2>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+            <% terms.forEach(term=>{ %>
+                <!-- Column -->
+                <div class="col-md-6 col-lg-2 col-xlg-3">
+                    <div class="card card-hover">
+                        <a href="consultant/term/<%= term._id %>">
+                            <div class="box bg-cyan text-center">
+                                <h3 class="font-light text-white"><%= term.clientFirstName + " " + term.clientLastName %></h3>
+                                <p class="font-light text-white"><%= term.termsDatum + " " + term.termsVreme %></p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!-- Column -->
+            <% }) %>
+
+        </div>
+
+
+        <!-- ============================================================== -->
+        <!-- Recent comment and chats -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Container fluid  -->
+    <!-- ============================================================== -->
+
+</div>
+
+<%- include("partials/bottom") %>
