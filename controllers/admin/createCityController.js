@@ -1,16 +1,16 @@
-const mongojs = require("mongojs")
-const {CONNECTION_STRING} = require("../../config/dbConfig")
-const db = mongojs(CONNECTION_STRING, ["users", "city"])
+const City = require("../../model/CityModel")
 
 const createCityController = (req, res) => {
-    let {cityName, zip} = req.body
-    db.city.insertOne({cityName, zip}, (err, docs) => {
-        if (err) {
-            //TODO	display error page
-        } else {
-            res.redirect("/admin")
-        }
-    })
+	let {cityName, zip} = req.body
+	let newCity = new City({cityName, zip})
+	newCity.save((err, docs) => {
+		if (err) {
+			//TODO	display error page
+		} else {
+			res.redirect("/admin")
+		}
+	})
+
 }
 
 module.exports = createCityController

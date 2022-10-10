@@ -1,4 +1,6 @@
 const express = require("express")
+const mongoose = require("mongoose")
+const {CONNECTION_STRING} = require("./config/dbConfig")
 const app = express()
 const routes = require("./routs")
 const session = require("express-session")
@@ -12,6 +14,12 @@ const {
 	SESS_LIFETIME = HALF_DAY
 } = process.env
 const IN_PRODUCTION = NODE_ENV == "production"
+
+mongoose
+  .connect(CONNECTION_STRING)
+  .then((data) => console.log("MONGO DB is connected"))
+  .catch((err) => console.log(err))
+
 app.set("view engine", "ejs")
 app.use(express.urlencoded({extended: false}))
 app.use(express.json())

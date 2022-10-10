@@ -1,12 +1,15 @@
-const mongojs = require("mongojs")
-const {CONNECTION_STRING} = require("../../config/dbConfig")
-const db = mongojs(CONNECTION_STRING, ["products"])
+const Products = require("../../model/ProductsModel")
 
 const deleteProductController = (req, res) => {
-    let id = req.params.productId
-    db.products.remove({_id: mongojs.ObjectID(id)}, (err, docs) => {
-        res.send("OK")
-    })
+	let id = req.params.productId
+	Products.deleteMany({_id: id}, (err) => {
+		if (err) {
+			//TODO render error page
+		} else {
+			res.send("OK")
+
+		}
+	})
 }
 
 module.exports = deleteProductController

@@ -1,15 +1,15 @@
-const mongojs = require("mongojs")
-const {CONNECTION_STRING} = require("../../config/dbConfig")
-const db = mongojs(CONNECTION_STRING, ["users"])
+const Users = require("../../model/UserModel")
 const saveController = (req, res) => {
-    let {firstName, lastName, password, role, email} = req.body
-    db.users.insertOne({firstName, lastName, password, role, email}, (err, docs) => {
-        if (err) {
-            //TODO	display error page
-        } else {
-            res.redirect("/admin")
-        }
-    })
+	let {firstName, lastName, password, role, email} = req.body
+	let newUser = new Users({firstName, lastName, password, role, email})
+	newUser.save((err, doc) => {
+		if (err) {
+			//TODO	display error page
+		} else {
+			console.log(doc)
+			res.redirect("/admin")
+		}
+	})
 }
 
 module.exports = saveController

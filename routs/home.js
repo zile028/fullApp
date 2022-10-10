@@ -1,8 +1,5 @@
 const express = require("express")
 const router = express.Router()
-const mongojs = require("mongojs")
-const {CONNECTION_STRING} = require("../config/dbConfig")
-const db = mongojs(CONNECTION_STRING, ["users", "terms"])
 
 router.get("/", checkIsLogin, (req, res) => {
 	res.render("index")

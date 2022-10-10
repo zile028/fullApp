@@ -1,12 +1,15 @@
-const mongojs = require("mongojs")
-const {CONNECTION_STRING} = require("../../config/dbConfig")
-const db = mongojs(CONNECTION_STRING, ["users"])
+const User = require("../../model/UserModel")
 
-const deleteCityController = (req, res) => {
-    let userId = req.params.userId
-    db.users.remove({_id: mongojs.ObjectID(userId)}, (err, docs) => {
-        res.send("OK")
-    })
+const deleteUserController = (req, res) => {
+	let userId = req.params.userId
+	User.deleteOne({_id: userId}, (err) => {
+		if (err) {
+			//TODO render error page
+		} else {
+			res.send("OK")
+
+		}
+	})
 }
 
-module.exports = deleteCityController
+module.exports = deleteUserController

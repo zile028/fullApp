@@ -1,20 +1,20 @@
-const mongojs = require("mongojs")
-const {CONNECTION_STRING} = require("../../config/dbConfig")
-const db = mongojs(CONNECTION_STRING, ["users", "city", "terms"])
+const Users = require("../../model/UserModel")
+const Terms = require("../../model/TermModel")
+const City = require("../../model/CityModel")
 
 const operatorController = (req, res) => {
-    let {user} = req.session
-    db.users.find({role: "savetnik"}, (err, savetnici) => {
-        db.city.find({}, (err, gradovi) => {
-            db.terms.find({operator: user._id}, (err, terms) => {
-                res.render("operator/index", {
-                    user: user,
-                    savetnici: savetnici,
-                    gradovi: gradovi,
-                    brojTermina: terms.length
-                })
-            })
-        })
-    })
+	let {user} = req.session
+	Users.find({role: "savetnik"}, (err, savetnici) => {
+		City.find({}, (err, gradovi) => {
+			Terms.find({operator: user._id}, (err, terms) => {
+				res.render("operator/index", {
+					user: user,
+					savetnici: savetnici,
+					gradovi: gradovi,
+					brojTermina: terms.length
+				})
+			})
+		})
+	})
 }
 module.exports = operatorController
