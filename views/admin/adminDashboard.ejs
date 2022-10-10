@@ -103,7 +103,9 @@
                                             </h6>
                                             <div class="comment-footer">
                                                 <span class="text-muted float-right">April 14, 2016</span>
-                                                <button type="button" class="btn btn-cyan btn-sm">Edit</button>
+                                                <a href="/admin/showTerms/<%= el._id %>"
+                                                    class="btn btn-cyan btn-sm">Termini</a>
+
                                                 <button type="button" class="btn btn-success btn-sm">Publish</button>
                                                 <button type="button" class="btn btn-danger btn-sm
                                         deleteUserBtn" data-id="<%= el._id %>">Delete
@@ -122,19 +124,22 @@
                             </div>
                             <div class="comment-widgets scrollable">
                                 <% proizvodi.forEach((el)=>{ %>
-                                    <div class="comment-text w-100">
-                                        <h6 class="font-medium">
-                                            <%= el.productName %>
-                                        </h6>
-                                        <div class="comment-footer">
-                                            <span class="text-muted float-right">April 14, 2016</span>
-                                            <button type="button" class="btn btn-cyan btn-sm">Edit</button>
-                                            <button type="button" class="btn btn-success btn-sm">Publish</button>
-                                            <button type="button" class="btn btn-danger btn-sm
+                                    <div class="d-flex flex-row comment-row m-t-0">
+                                        <div class="comment-text w-100">
+                                            <h6 class="font-medium">
+                                                <%= el.productName %>
+                                            </h6>
+                                            <div class="comment-footer">
+                                                <span class="text-muted float-right">April 14, 2016</span>
+                                                <button type="button" class="btn btn-cyan btn-sm">Edit</button>
+                                                <button type="button" class="btn btn-success btn-sm">Publish</button>
+                                                <button type="button" class="btn btn-danger btn-sm
                                         deleteProductBtn" data-id="<%= el._id %>">Delete
-                                            </button>
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
+
                                     <% }) %>
                             </div>
                         </div>
@@ -149,18 +154,20 @@
                             </div>
                             <div class="comment-widgets scrollable">
                                 <% savetnici.forEach((el)=>{ %>
-                                    <div class="comment-text w-100">
-                                        <h6 class="font-medium">
-                                            <%= el.firstName + " " + el.lastName %>
-                                        </h6>
-                                        <div class="comment-footer">
-                                            <span class="text-muted float-right">April 14, 2016</span>
-                                            <a href="/admin/showTerms/<%= el._id %>"
-                                                class="btn btn-cyan btn-sm">Termini</a>
-                                            <button type="button" class="btn btn-success btn-sm">Publish</button>
-                                            <button type="button" class="btn btn-danger btn-sm
-                                        deleteUserBtn" data-id="<%= el._id %>">Delete
-                                            </button>
+                                    <div class="d-flex flex-row comment-row m-t-0">
+                                        <div class="comment-text w-100">
+                                            <h6 class="font-medium">
+                                                <%= el.firstName + " " + el.lastName %>
+                                            </h6>
+                                            <div class="comment-footer">
+                                                <span class="text-muted float-right">April 14, 2016</span>
+                                                <a href="/admin/showTerms/<%= el._id %>"
+                                                    class="btn btn-cyan btn-sm">Termini</a>
+                                                <button type="button" class="btn btn-success btn-sm">Publish</button>
+                                                <button type="button" class="btn btn-danger btn-sm
+                                                    deleteUserBtn" data-id="<%= el._id %>">Delete
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                     <% }) %>
@@ -172,18 +179,20 @@
                             </div>
                             <div class="comment-widgets scrollable">
                                 <% gradovi.forEach((el)=>{ %>
-                                    <div class="comment-text w-100">
-                                        <h6 class="font-medium">
-                                            <%= el.cityName + " " + el.zip %>
-                                        </h6>
-                                        <div class="comment-footer">
-                                            <span class="text-muted float-right">April 14, 2016</span>
-                                            <button type="button" class="btn btn-cyan btn-sm">Edit</button>
-                                            <button type="button" class="btn btn-success btn-sm">Publish</button>
-                                            <button type="button" class="btn btn-danger btn-sm
+                                    <div class="d-flex flex-row comment-row m-t-0">
+                                        <div class="comment-text w-100">
+                                            <h6 class="font-medium">
+                                                <%= el.cityName + " " + el.zip %>
+                                            </h6>
+                                            <div class="comment-footer">
+                                                <span class="text-muted float-right">April 14, 2016</span>
+                                                <button type="button" class="btn btn-cyan btn-sm">Edit</button>
+                                                <button type="button" class="btn btn-success btn-sm">Publish</button>
+                                                <button type="button" class="btn btn-danger btn-sm
                                         deleteCityBtn" data-id="<%= el._id %>">Delete
-                                            </button>
+                                                </button>
 
+                                            </div>
                                         </div>
                                     </div>
                                     <% }) %>
