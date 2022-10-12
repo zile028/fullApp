@@ -1,5 +1,5 @@
-<%- include("partials/adminTop.ejs") %>
-    <%- include("partials/adminSideBar.ejs") %>
+<%- include("partials/top",{name:user.firstName}) %>
+    <%- include("partials/sidebar",{brojTermina:terms.length}) %>
 
         <div class="page-wrapper">
             <!-- ============================================================== -->
@@ -81,22 +81,13 @@
                                                 <td>
                                                     <%= term.costContract %>
                                                 </td>
-                                                <td><a href="/admin/terms/single/<%= term._id %>"
+                                                <td><a href="/operator/terms/<%= term._id %>"
                                                         class="btn btn-sm btn-info">Vise</a></td>
 
                                             </tr>
                                             <% }) %>
                                     </tbody>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
-                                        </tr>
-                                    </tfoot>
+
                                 </table>
                             </div>
 
@@ -108,4 +99,5 @@
             </div>
 
         </div>
-        <%- include("partials/adminBottom.ejs") %>
+
+        <%- include("partials/bottom") %>
